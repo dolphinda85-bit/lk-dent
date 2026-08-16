@@ -1,0 +1,43 @@
+{
+  "description": "Звуковые сигналы для проекта ЛК Дент.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\ROG\\Documents\\Codex\\ЛК Дент\\.codex\\hooks\\security_guard.ps1\"",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\ROG\\Documents\\Codex\\ЛК Дент\\.codex\\hooks\\security_guard.ps1\"",
+            "statusMessage": "Проверка безопасности команды",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -Command \"[System.Media.SystemSounds]::Asterisk.Play(); Write-Output '{}'\"",
+            "commandWindows": "powershell.exe -NoProfile -Command \"[System.Media.SystemSounds]::Asterisk.Play(); Write-Output '{}'\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -Command \"[System.Media.SystemSounds]::Exclamation.Play()\"",
+            "commandWindows": "powershell.exe -NoProfile -Command \"[System.Media.SystemSounds]::Exclamation.Play()\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# Пример настройки Codex - файл ~/.codex/config.toml
+# Сделай бэкап перед правкой.
+
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+
+# Автономность (безопасный режим): сам читает/правит файлы в папке проекта,
+# спрашивает только перед выходом за папку или опасным действием.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+# Полный обход (рискованно, только для изолированной папки):
+# approval_policy = "never"
+# sandbox_mode = "danger-full-access"
