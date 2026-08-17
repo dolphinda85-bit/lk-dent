@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dentprotocol.by/schemas/medical-card-043u.schema.json",
+  "title": "Электронная медицинская карта стоматологического пациента 043/у",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "cardId",
+    "revision",
+    "status",
+    "promptVersion",
+    "patient",
+    "visit",
+    "clinicalRecord",
+    "audit"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "cardId": { "type": "string", "minLength": 1 },
+    "revision": { "type": "integer", "minimum": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "reviewed", "approved", "corrected", "cancelled"]
+    },
+    "promptVersion": { "type": "string", "const": "DentProtocol BY v6.0" },
+    "formTemplateVersion": { "type": ["string", "null"] },
+    "clinicId": { "type": ["string", "null"] },
+    "doctorId": { "type": ["string", "null"] },
+    "patient": { "$ref": "#/$defs/patient" },
+    "visit": { "$ref": "#/$defs/visit" },
+    "clinicalRecord": { "$ref": "#/$defs/clinicalRecord" },
+    "form037u": { "anyOf": [{ "$ref": "#/$defs/form037u" }, { "type": "null" }] },
+    "pdf": { "anyOf": [{ "$ref": "#/$defs/pdf" }, { "type": "null" }] },
+    "audit": { "$ref": "#/$defs/audit" }
+  },
+  "$defs": {
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patientId", "lastName", "firstName"],
+      "properties": {
+        "patientId": { "type": "string", "minLength": 1 },
+        "lastName": { "type": "string" },
+        "firstName": { "type": "string" },
+        "middleName": { "type": ["string", "null"] },
+        "birthDate": { "type": ["string", "null"], "format": "date" },
+        "sex": { "type": ["string", "null"], "enum": ["male", "female", "unknown", null] },
+        "phone": { "type": ["string", "null"] },
+        "address": { "type": ["string", "null"] }
+      }
+    },
+    "visit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["visitId", "dateTime", "patientType"],
+      "properties": {
+        "visitId": { "type": "string", "minLength": 1 },
+        "dateTime": { "type": "string", "format": "date-time" },
+        "patientType": { "type": "string", "enum": ["primary", "repeat"] },
+        "specialty": {
+          "type": ["string", "null"],
+          "enum": ["examination", "therapy", "endodontics", "orthopedics", "implant_prosthetics", "hygiene", null]
+        },
+        "sourceDictation": { "type": ["string", "null"] }
+      }
+    },
+    "clinicalRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complaints", "localStatus", "diagnoses", "treatmentPlan", "treatmentPerformed", "recommendations"],
+      "properties": {
+        "complaints": { "type": "string" },
+        "presentIllness": { "type": ["string", "null"] },
+        "generalHealth": { "type": ["string", "null"] },
+        "generalHealthChecklist": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/generalHealthItem" }
+        },
+        "externalExamination": { "type": ["string", "null"] },
+        "externalExamDetails": { "$ref": "#/$defs/externalExam" },
+        "bite": { "type": ["string", "null"] },
+        "dentalConditionText": { "type": ["string", "null"] },
+        "periodontium": { "type": ["string", "null"] },
+        "oralMucosa": { "type": ["string", "null"] },
+        "dentalFormula": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/tooth" }
+        },
+        "indices": { "$ref": "#/$defs/indices" },
+        "localStatus": { "type": "string" },
+        "diagnostics": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/diagnostic" }
+        },
+        "diagnoses": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/diagnosis" }
+        },
+        "treatmentPlan": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/treatmentItem" }
+        },
+        "treatmentPerformed": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/treatmentItem" }
+        },
+        "prostheticConstructions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prostheticConstruction" }
+        },
+        "recommendations": { "type": "array", "items": { "type": "string" } },
+        "renderedText": { "type": ["string", "null"] }
+      }
+    },
+    "tooth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fdi", "presence", "basis", "conditions", "source"],
+      "properties": {
+        "fdi": { "type": "integer", "minimum": 11, "maximum": 85 },
+        "presence": { "type": "string", "enum": ["present", "absent"] },
+        "basis": { "type": "string", "enum": ["natural_tooth", "implant", "pontic", "none"] },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["intact", "caries", "filling", "crown", "root_remnant", "post_endo", "other"]
+          }
+        },
+        "vitality": { "type": ["string", "null"], "enum": ["vital", "post_endo", "unknown", null] },
+        "canalsNormal": { "type": ["boolean", "null"] },
+        "destructionFraction": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "plannedConstruction": { "type": ["string", "null"] },
+        "note": { "type": ["string", "null"] },
+        "source": { "type": "string", "enum": ["doctor", "patient_history", "protocol", "calculated"] }
+      }
+    },
+    "generalHealthItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "answer"],
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "cardiovascular",
+            "nervous",
+            "endocrine",
+            "digestive",
+            "respiratory",
+            "infectious",
+            "allergy",
+            "regular_medication",
+            "occupational_hazard",
+            "pregnancy_postpartum",
+            "other"
+          ]
+        },
+        "answer": { "type": "string", "enum": ["yes", "no", "unknown"] },
+        "details": { "type": ["string", "null"] }
+      }
+    },
+    "externalExam": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "faceConfiguration": { "type": ["string", "null"] },
+        "skinAndLips": { "type": ["string", "null"] },
+        "lymphNodes": { "type": ["string", "null"] },
+        "tmj": { "type": ["string", "null"] }
+      }
+    },
+    "indices": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kpu": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["k", "p", "u", "total"],
+          "properties": {
+            "k": { "type": "integer", "minimum": 0 },
+            "p": { "type": "integer", "minimum": 0 },
+            "u": { "type": "integer", "minimum": 0 },
+            "total": { "type": "integer", "minimum": 0 },
+            "source": { "type": "string", "enum": ["doctor", "calculated"] }
+          }
+        },
+        "ohiS": { "$ref": "#/$defs/ohiS" }
+      }
+    },
+    "ohiS": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["total", "source"],
+      "properties": {
+        "total": { "type": "number", "minimum": 0, "maximum": 6 },
+        "diS": { "type": ["number", "null"], "minimum": 0, "maximum": 3 },
+        "ciS": { "type": ["number", "null"], "minimum": 0, "maximum": 3 },
+        "source": { "type": "string", "enum": ["doctor", "calculated"] }
+      }
+    },
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "result", "source"],
+      "properties": {
+        "type": { "type": "string", "enum": ["eod", "thermal_test", "percussion", "palpation", "xray", "cbct", "other"] },
+        "toothFdi": { "type": ["integer", "null"] },
+        "result": { "type": "string" },
+        "numericValue": { "type": ["number", "null"] },
+        "unit": { "type": ["string", "null"] },
+        "performedAt": { "type": ["string", "null"], "format": "date-time" },
+        "source": { "type": "string", "enum": ["doctor", "patient_history", "protocol"] }
+      }
+    },
+    "diagnosis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "code": { "type": ["string", "null"] },
+        "primary": { "type": "boolean", "default": false }
+      }
+    },
+    "treatmentItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "state"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "toothFdi": { "type": ["integer", "null"] },
+        "category": {
+          "type": ["string", "null"],
+          "enum": ["emergency", "prevention", "therapy", "endodontics", "periodontics", "surgery", "orthopedics", "orthodontics", "diagnostics", "consultation", "other", null]
+        },
+        "formLine": { "type": ["string", "null"] },
+        "state": { "type": "string", "enum": ["planned", "performed", "not_performed", "cancelled"] },
+        "materials": { "type": "array", "items": { "type": "string" } },
+        "confirmedByDoctor": { "type": "boolean", "default": false }
+      }
+    },
+    "prostheticConstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["constructionId", "type", "supports", "pontics", "stage"],
+      "properties": {
+        "constructionId": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["crown", "endocrown", "bridge", "implant_crown", "implant_bridge"] },
+        "material": { "type": ["string", "null"] },
+        "supports": { "type": "array", "items": { "type": "integer" } },
+        "pontics": { "type": "array", "items": { "type": "integer" } },
+        "fixation": { "type": ["string", "null"], "enum": ["cement", "screw", "combined", "unknown", null] },
+        "visitsPlanned": { "type": ["integer", "null"], "enum": [2, 3, null] },
+        "stage": { "type": "string", "enum": ["planned", "stage_1", "stage_2", "stage_3", "completed"] },
+        "fitAcceptable": { "type": ["boolean", "null"] },
+        "passivityAcceptable": { "type": ["boolean", "null"] },
+        "finalFixationAllowed": { "type": ["boolean", "null"] },
+        "clinicalAssessment": { "type": ["string", "null"] }
+      }
+    },
+    "form037u": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patientType", "performedWork", "treatmentStage"],
+      "properties": {
+        "patientType": { "type": "string", "enum": ["primary", "repeat"] },
+        "diagnosisText": { "type": ["string", "null"] },
+        "diagnosisCode": { "type": ["string", "null"] },
+        "performedWork": { "type": "array", "items": { "type": "string" } },
+        "anesthesia": { "type": ["string", "null"] },
+        "treatmentStage": { "type": "string", "enum": ["L1", "L2", "L3"] }
+      }
+    },
+    "pdf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["templateVersion", "cardRevision", "generatedAt", "sha256", "pageCount", "validationPassed"],
+      "properties": {
+        "templateVersion": { "type": "string" },
+        "cardRevision": { "type": "integer", "minimum": 1 },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "fileId": { "type": ["string", "null"] },
+        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+        "pageCount": { "type": "integer", "minimum": 1 },
+        "validationPassed": { "type": "boolean" }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["createdAt", "createdBy", "changes"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "createdBy": { "type": "string" },
+        "approvedAt": { "type": ["string", "null"], "format": "date-time" },
+        "approvedBy": { "type": ["string", "null"] },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["revision", "changedAt", "changedBy", "reason", "fields"],
+            "properties": {
+              "revision": { "type": "integer", "minimum": 1 },
+              "changedAt": { "type": "string", "format": "date-time" },
+              "changedBy": { "type": "string" },
+              "reason": { "type": "string" },
+              "fields": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

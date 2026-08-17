@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "cardId": "TEST-043U-001",
+  "revision": 1,
+  "status": "approved",
+  "promptVersion": "DentProtocol BY v6.0",
+  "formTemplateVersion": "Форма 043/у, пустой бланк v6",
+  "clinicId": "LK-DENT-TEST",
+  "doctorId": "DOCTOR-TEST",
+  "patient": {
+    "patientId": "PATIENT-TEST-001",
+    "lastName": "Тестовый",
+    "firstName": "Пациент",
+    "middleName": null,
+    "birthDate": null,
+    "sex": "unknown",
+    "phone": null,
+    "address": null
+  },
+  "visit": {
+    "visitId": "VISIT-TEST-001",
+    "dateTime": "2026-08-17T12:00:00+03:00",
+    "patientType": "primary",
+    "specialty": "orthopedics",
+    "sourceDictation": "Обезличенный тестовый случай комплексного ортопедического лечения."
+  },
+  "clinicalRecord": {
+    "complaints": "Эстетические нарушения, отсутствие зубов и нарушение функции жевания с обеих сторон.",
+    "presentIllness": "Ранее проводилось терапевтическое и эндодонтическое лечение. Обратился для комплексного восстановления эстетики и функции жевания несъемными ортопедическими конструкциями.",
+    "generalHealth": "Со слов пациента без особенностей.",
+    "generalHealthChecklist": [
+      { "condition": "cardiovascular", "answer": "no", "details": null },
+      { "condition": "nervous", "answer": "no", "details": null },
+      { "condition": "endocrine", "answer": "no", "details": null },
+      { "condition": "digestive", "answer": "no", "details": null },
+      { "condition": "respiratory", "answer": "no", "details": null },
+      { "condition": "infectious", "answer": "no", "details": null },
+      { "condition": "allergy", "answer": "no", "details": null },
+      { "condition": "regular_medication", "answer": "no", "details": null },
+      { "condition": "occupational_hazard", "answer": "no", "details": null },
+      { "condition": "pregnancy_postpartum", "answer": "no", "details": null },
+      { "condition": "other", "answer": "no", "details": null }
+    ],
+    "externalExamination": "Лицо симметрично. Открывание рта свободное. Признаков дисфункции ВНЧС не выявлено.",
+    "externalExamDetails": {
+      "faceConfiguration": "не изменена, лицо симметрично",
+      "skinAndLips": "обычной окраски, без видимых патологических изменений",
+      "lymphNodes": "не увеличены, при пальпации безболезненны",
+      "tmj": "открывание рта свободное, движения плавные, безболезненные"
+    },
+    "bite": "Без видимых особенностей.",
+    "dentalConditionText": "Пломбы: 11, 12, 14, 15, 16, 21, 22, 24, 25, 27, 32, 38, 41, 42. После эндодонтического лечения: 12, 21, 22, 24, 25, 38. Кариес 17. Зубы 26, 28, 31, 35, 36, 46, 48 отсутствуют. В области 37 - сохранившийся корень.",
+    "periodontium": "Десна бледно-розовая, плотно прилегает к шейкам зубов. Видимых признаков воспаления и патологической кровоточивости не выявлено.",
+    "oralMucosa": "Слизистая оболочка бледно-розовая, умеренно увлажнена, без видимых патологических элементов и нарушения целостности.",
+    "dentalFormula": [
+      { "fdi": 18, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "unknown", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": null, "note": null, "source": "doctor" },
+      { "fdi": 17, "presence": "present", "basis": "natural_tooth", "conditions": ["caries"], "vitality": "unknown", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": null, "note": null, "source": "doctor" },
+      { "fdi": 16, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 15, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 14, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 13, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 12, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": true, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 11, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 21, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": null, "destructionFraction": 0.6, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 22, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": true, "destructionFraction": 0.6, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 23, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 24, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": true, "destructionFraction": 0.6, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 25, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": true, "destructionFraction": 0.6, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 26, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "pontic", "note": null, "source": "doctor" },
+      { "fdi": 27, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 28, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": null, "note": null, "source": "doctor" },
+      { "fdi": 48, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": null, "note": null, "source": "doctor" },
+      { "fdi": 47, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 46, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "pontic", "note": null, "source": "doctor" },
+      { "fdi": 45, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 44, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 43, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 42, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 41, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 31, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "pontic", "note": null, "source": "doctor" },
+      { "fdi": 32, "presence": "present", "basis": "natural_tooth", "conditions": ["filling"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 33, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "bridge_support", "note": null, "source": "doctor" },
+      { "fdi": 34, "presence": "present", "basis": "natural_tooth", "conditions": ["intact"], "vitality": "vital", "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "zirconia_crown", "note": null, "source": "doctor" },
+      { "fdi": 35, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "implant_bridge_pontic", "note": null, "source": "doctor" },
+      { "fdi": 36, "presence": "absent", "basis": "none", "conditions": [], "vitality": null, "canalsNormal": null, "destructionFraction": null, "plannedConstruction": "implant", "note": null, "source": "doctor" },
+      { "fdi": 37, "presence": "present", "basis": "natural_tooth", "conditions": ["root_remnant"], "vitality": "unknown", "canalsNormal": null, "destructionFraction": 1.0, "plannedConstruction": "extraction_and_implant", "note": null, "source": "doctor" },
+      { "fdi": 38, "presence": "present", "basis": "natural_tooth", "conditions": ["filling", "post_endo"], "vitality": "post_endo", "canalsNormal": null, "destructionFraction": 0.6, "plannedConstruction": null, "note": null, "source": "doctor" }
+    ],
+    "indices": {
+      "kpu": { "k": 1, "p": 14, "u": 7, "total": 22, "source": "calculated" },
+      "ohiS": { "total": 1.2, "diS": 0.8, "ciS": 0.4, "source": "doctor" }
+    },
+    "localStatus": "Зубы 26, 28, 31, 35, 36, 46 и 48 отсутствуют. В области зуба 37 определяется сохранившийся корень. Зубы 12, 21, 22, 24, 25 и 38 - состояние после эндодонтического лечения. Перкуссия безболезненна. Краевой пародонт без видимых признаков воспаления.",
+    "diagnostics": [
+      { "type": "xray", "toothFdi": 12, "result": "Корневые каналы обтурированы равномерно. Периапикальных изменений не выявлено.", "numericValue": null, "unit": null, "performedAt": null, "source": "doctor" },
+      { "type": "xray", "toothFdi": 22, "result": "Корневые каналы обтурированы равномерно. Периапикальных изменений не выявлено.", "numericValue": null, "unit": null, "performedAt": null, "source": "doctor" },
+      { "type": "xray", "toothFdi": 24, "result": "Корневые каналы обтурированы равномерно. Периапикальных изменений не выявлено.", "numericValue": null, "unit": null, "performedAt": null, "source": "doctor" },
+      { "type": "xray", "toothFdi": 25, "result": "Корневые каналы обтурированы равномерно. Периапикальных изменений не выявлено.", "numericValue": null, "unit": null, "performedAt": null, "source": "doctor" }
+    ],
+    "diagnoses": [
+      { "text": "Частичная вторичная адентия.", "code": null, "primary": true },
+      { "text": "Сохранившийся корень зуба 37.", "code": null, "primary": false },
+      { "text": "Кариес зуба 17.", "code": null, "primary": false },
+      { "text": "Состояние после эндодонтического лечения зубов 12, 21, 22, 24, 25 и 38.", "code": null, "primary": false }
+    ],
+    "treatmentPlan": [
+      { "text": "Обучение индивидуальной гигиене полости рта.", "toothFdi": null, "category": "prevention", "formLine": "hygiene_training", "state": "planned", "materials": [], "confirmedByDoctor": true },
+      { "text": "Профессиональная гигиена полости рта.", "toothFdi": null, "category": "prevention", "formLine": "professional_hygiene", "state": "planned", "materials": [], "confirmedByDoctor": true },
+      { "text": "Лечение кариеса зуба 17.", "toothFdi": 17, "category": "therapy", "formLine": "caries", "state": "planned", "materials": [], "confirmedByDoctor": true },
+      { "text": "Удаление сохранившегося корня зуба 37.", "toothFdi": 37, "category": "surgery", "formLine": "extraction", "state": "planned", "materials": [], "confirmedByDoctor": true },
+      { "text": "Имплантация в области 36 и 37 после хирургической оценки.", "toothFdi": null, "category": "surgery", "formLine": "implantation", "state": "planned", "materials": [], "confirmedByDoctor": true },
+      { "text": "Коронки и мостовидные протезы из диоксида циркония, трехэтапно с ПММА-прототипом.", "toothFdi": null, "category": "orthopedics", "formLine": "fixed_prosthetics", "state": "planned", "materials": ["диоксид циркония", "ПММА"], "confirmedByDoctor": true },
+      { "text": "КЛКТ области 36 и 37 по показаниям.", "toothFdi": null, "category": "diagnostics", "formLine": "additional", "state": "planned", "materials": [], "confirmedByDoctor": true }
+    ],
+    "treatmentPerformed": [
+      { "text": "Получены диагностические оттиски Honigum Heavy/Light. Выполнены регистрация прикуса и регистрация положения верхней челюсти лицевой дугой. Изготовлены диагностические модели, проведены гипсовка в артикулятор и анализ окклюзии. Выполнен диагностический wax-up, изготовлены силиконовые шаблоны.", "toothFdi": null, "category": "diagnostics", "formLine": null, "state": "performed", "materials": ["Honigum Heavy/Light"], "confirmedByDoctor": true },
+      { "text": "После клинического контроля витальных опорных зубов проведены аппликационная анестезия Lidocaine gel 10% и местная анестезия Orabloc 4% с эпинефрином 1:200 000. Аспирационная проба отрицательная, введение медленное.", "toothFdi": null, "category": "orthopedics", "formLine": null, "state": "performed", "materials": ["Lidocaine gel 10%", "Orabloc 4% 1:200 000"], "confirmedByDoctor": true },
+      { "text": "Проведена двухнитевая ретракция Sure-Cord. Зубы 11-16, 21-25, 27, 32-34, 41-45 и 47 препарированы под конструкции из диоксида циркония с использованием силиконовых шаблонов. Редукция 1,0-1,2 мм окклюзионно и по режущему краю, 0,6-0,7 мм в пришеечной области. Препарирование проводилось с водяным охлаждением, прерывисто, без избыточного давления.", "toothFdi": null, "category": "orthopedics", "formLine": null, "state": "performed", "materials": ["Sure-Cord"], "confirmedByDoctor": true },
+      { "text": "На витальных зубах выполнена IDS: GC Fuji PLUS Lining Conditioner 10 секунд, промывание, высушивание, Tokuyama Shield Force Plus, фотополимеризация, нанесение глицерина, окончательная фотополимеризация, промывание.", "toothFdi": null, "category": "orthopedics", "formLine": null, "state": "performed", "materials": ["GC Fuji PLUS Lining Conditioner", "Tokuyama Shield Force Plus"], "confirmedByDoctor": true },
+      { "text": "Получены рабочие оттиски Honigum Heavy/Light. Изготовлены временные одиночные коронки и мостовидные протезы Structur 2 SC. Выполнены коррекция краевого прилегания, межзубных и окклюзионных контактов, шлифовка и полировка. Временные конструкции зафиксированы.", "toothFdi": null, "category": "orthopedics", "formLine": null, "state": "performed", "materials": ["Honigum Heavy/Light", "Structur 2 SC"], "confirmedByDoctor": true },
+      { "text": "Проведены сканирование рабочих моделей и CAD-моделирование полноанатомических ПММА-прототипов.", "toothFdi": null, "category": "orthopedics", "formLine": null, "state": "performed", "materials": ["ПММА"], "confirmedByDoctor": true }
+    ],
+    "prostheticConstructions": [
+      { "constructionId": "CROWN-GROUP-1", "type": "crown", "material": "диоксид циркония", "supports": [11,12,13,14,15,16,21,22,23,24,34,43,44], "pontics": [], "fixation": "cement", "visitsPlanned": 3, "stage": "planned", "fitAcceptable": null, "passivityAcceptable": null, "finalFixationAllowed": null, "clinicalAssessment": null },
+      { "constructionId": "BRIDGE-25-27", "type": "bridge", "material": "диоксид циркония", "supports": [25,27], "pontics": [26], "fixation": "cement", "visitsPlanned": 3, "stage": "planned", "fitAcceptable": null, "passivityAcceptable": null, "finalFixationAllowed": null, "clinicalAssessment": null },
+      { "constructionId": "BRIDGE-LOWER-FRONT", "type": "bridge", "material": "диоксид циркония", "supports": [32,33,41,42], "pontics": [31], "fixation": "cement", "visitsPlanned": 3, "stage": "planned", "fitAcceptable": null, "passivityAcceptable": null, "finalFixationAllowed": null, "clinicalAssessment": null },
+      { "constructionId": "BRIDGE-45-47", "type": "bridge", "material": "диоксид циркония", "supports": [45,47], "pontics": [46], "fixation": "cement", "visitsPlanned": 3, "stage": "planned", "fitAcceptable": null, "passivityAcceptable": null, "finalFixationAllowed": null, "clinicalAssessment": null },
+      { "constructionId": "IMPLANT-BRIDGE-35-37", "type": "implant_bridge", "material": "диоксид циркония", "supports": [36,37], "pontics": [35], "fixation": "screw", "visitsPlanned": 3, "stage": "planned", "fitAcceptable": null, "passivityAcceptable": null, "finalFixationAllowed": null, "clinicalAssessment": null }
+    ],
+    "recommendations": [
+      "Провести профессиональную гигиену полости рта.",
+      "Соблюдать индивидуальную гигиену.",
+      "Продолжить лечение согласно согласованному плану."
+    ],
+    "renderedText": null
+  },
+  "form037u": null,
+  "pdf": null,
+  "audit": {
+    "createdAt": "2026-08-17T12:00:00+03:00",
+    "createdBy": "DOCTOR-TEST",
+    "approvedAt": "2026-08-17T12:10:00+03:00",
+    "approvedBy": "DOCTOR-TEST",
+    "changes": []
+  }
+}
